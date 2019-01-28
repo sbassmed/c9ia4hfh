@@ -15,9 +15,11 @@ class RoomsController < ApplicationController
       render :new
     end
   end
+
   def edit
     @room = Room.find(room_params[:id])
   end
+
   def destroy
     @room = Room.find(room_params[:id])
     room.destroy
