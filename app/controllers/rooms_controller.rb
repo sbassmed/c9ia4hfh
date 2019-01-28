@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
 
   def destroy
     @room = Room.find(room_params[:id])
-    room.destroy
+    @room.destroy
     redirect_to rooms_path
   end
   def update
@@ -33,6 +33,7 @@ class RoomsController < ApplicationController
         render :edit
       end
   end
+
   protected
     def room_params
       params.require(:room).permit(:title, :description, :beds, :guests, :image_url, :price_per_night)
